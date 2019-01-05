@@ -66,6 +66,8 @@
             this.tbadd = new System.Windows.Forms.TextBox();
             this.tbname = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.tbcid = new System.Windows.Forms.TextBox();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -385,6 +387,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbcid);
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -401,7 +405,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 121);
+            this.label10.Location = new System.Drawing.Point(31, 98);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 5;
@@ -410,7 +414,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 79);
+            this.label9.Location = new System.Drawing.Point(31, 67);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 4;
@@ -427,14 +431,14 @@
             // 
             // tbmob
             // 
-            this.tbmob.Location = new System.Drawing.Point(110, 118);
+            this.tbmob.Location = new System.Drawing.Point(110, 98);
             this.tbmob.Name = "tbmob";
             this.tbmob.Size = new System.Drawing.Size(100, 20);
             this.tbmob.TabIndex = 2;
             // 
             // tbadd
             // 
-            this.tbadd.Location = new System.Drawing.Point(110, 76);
+            this.tbadd.Location = new System.Drawing.Point(110, 64);
             this.tbadd.Name = "tbadd";
             this.tbadd.Size = new System.Drawing.Size(100, 20);
             this.tbadd.TabIndex = 1;
@@ -455,6 +459,24 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Book";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(34, 124);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Generate Id";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // tbcid
+            // 
+            this.tbcid.Location = new System.Drawing.Point(110, 126);
+            this.tbcid.Name = "tbcid";
+            this.tbcid.Size = new System.Drawing.Size(100, 20);
+            this.tbcid.TabIndex = 7;
             // 
             // Rent
             // 
@@ -523,5 +545,7 @@
         private System.Windows.Forms.TextBox tbadd;
         private System.Windows.Forms.TextBox tbname;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox tbcid;
     }
 }

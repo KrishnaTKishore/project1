@@ -93,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(197, 25);
+            this.label3.Location = new System.Drawing.Point(326, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(175, 13);
             this.label3.TabIndex = 6;
@@ -107,6 +107,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "exit";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // LogIn
             // 

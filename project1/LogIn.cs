@@ -20,9 +20,13 @@ namespace project1
         private void button1_Click(object sender, EventArgs e)
         {
             if (lognm.Text == "user" && logid.Text == "123")
+            {
                 this.Hide();
-            user u = new user();
-            u.Show();
+                user u = new user();
+                u.Show();
+            }
+            
+
 
         }
 
@@ -31,6 +35,16 @@ namespace project1
             this.Hide();
             Rent r = new Rent();
             r.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult iExit;
+            iExit = MessageBox.Show("Confirm if you want to exit", "car sales", MessageBoxButtons.YesNo);
+            if (iExit == DialogResult.Yes)
+            {
+                Application.Exit();                    
+            }
         }
     }
 }

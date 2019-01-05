@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace project1
 {
     public partial class Rent : Form
     {
+        int n;
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell\source\repos\project1\project1\customerdb.mdf;Integrated Security=True");
         public Rent()
         {
             InitializeComponent();
@@ -101,7 +105,7 @@ namespace project1
             richTextBox1.AppendText("***********Butter General Transport***********\n");
             richTextBox1.AppendText("***************************************************\n");
             richTextBox1.AppendText("Name: \t\t\t" + tbname.Text+"\n");
-            richTextBox1.AppendText("Email: \t\t\t" + tbadd.Text + "\n");
+            richTextBox1.AppendText("Email: \t\t" + tbadd.Text + "\n");
             richTextBox1.AppendText("Mobile: \t\t\t" + tbmob.Text + "\n\n");
             richTextBox1.AppendText("***************************************************\n");
             richTextBox1.AppendText("***************************************************\n\n\n");
@@ -207,6 +211,32 @@ namespace project1
             tax.Text = String.Format("{0:C2}", carcost[7]);
             subtot.Text=String.Format("{0:C2}", carcost[6]);
             tot.Text= String.Format("{0:C2}", (carcost[7]+carcost[6]));
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert into customer values(" + tbcid.Text + ",'" + tbname.Text + "','" + tbadd.Text + "','" + tbmob.Text + "','" + cbcar.Text + "','" + tot.Text + "')";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            
+            MessageBox.Show("Booking Successful!!");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        { 
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "select count(*) from customer";
+            string str = Convert.ToString(cmd.ExecuteScalar());
+            n = Convert.ToInt32(str);
+            n = n + 100;
+            tbcid.Text = Convert.ToString(n);
+            con.Close();
 
 
         }
