@@ -33,7 +33,7 @@ namespace project1
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Rent r = new Rent();
+            book r = new book();
             r.Show();
         }
 
@@ -45,6 +45,14 @@ namespace project1
             {
                 Application.Exit();                    
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            rent rt = new rent();
+            rt.Show();
+
         }
     }
 }

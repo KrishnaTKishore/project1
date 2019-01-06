@@ -17,7 +17,8 @@ namespace project1
     {
        
         SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell\source\repos\project1\project1\customerdb.mdf;Integrated Security=True");
-        
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell\source\repos\project1\project1\rentcustomer.mdf;Integrated Security=True");
+
         public custmgt()
         {
             InitializeComponent();
@@ -39,6 +40,18 @@ namespace project1
         {
             user f3 = new user();
             f3.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string cmd = "Select * from rentcust  ";
+            SqlDataAdapter dp = new SqlDataAdapter(cmd, con);
+
+            DataTable dt = new DataTable();
+            dp.Fill(dt);
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dt;
+            dataGridView1.DataSource = bs;
         }
     }
 }

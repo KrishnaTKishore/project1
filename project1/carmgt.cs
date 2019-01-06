@@ -67,11 +67,11 @@ namespace project1
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+            
 
-               if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 iloc.Text = openFileDialog1.FileName;
-            pictureBox1.ImageLocation = iloc.Text;
+           // pictureBox1.ImageLocation = iloc.Text;
 /*PictureBox pictureBox1 = new PictureBox();
             pictureBox1.ImageLocation = iloc.Text;
             pictureBox1.Image = Image.FromFile("@iloc.text");*/
@@ -96,17 +96,9 @@ namespace project1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            /*con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from car where Id=" + cid.Text, con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            byte[] mydata = new byte[0];
-            mydata = (byte[])dt.Rows[0][1];
-            MemoryStream ms = new MemoryStream(mydata);
-            pictureBox1.Image = Image.FromStream(ms);
-            con.Close();*/
-            iloc.Text = openFileDialog1.FileName;
-            pictureBox1.ImageLocation = iloc.Text;
+            this.Close();
+            user us = new user();
+            us.Show();      
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -118,6 +110,7 @@ namespace project1
         private void button4_Click_1(object sender, EventArgs e)
         {
             dispcartable k = new dispcartable();
+            this.Close();
             k.Show();
 
         }
@@ -130,7 +123,59 @@ namespace project1
             cmd.CommandText = "Delete from car WHERE ID='" + cid.Text + "'";
             cmd.ExecuteNonQuery();
             con.Close();
-            //display_Click(sender, e);
+            MessageBox.Show("record deleted");
+            button4_Click_1(sender, e);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select * from car where Id=" + cid.Text, con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            byte[] mydata = new byte[0];
+            mydata = (byte[])dt.Rows[0][12];
+            MemoryStream ms = new MemoryStream(mydata);
+            pictureBox1.Image = Image.FromStream(ms);
+            con.Close();
+            
+            /* string str = "SELECT model FROM car  WHERE Id='" + cid.Text + "'";
+            SqlDataAdapter sd = new SqlDataAdapter(str, con);
+            DataSet ds = new DataSet();
+            sd.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+               MemoryStream ms=new MemoryStream(mydata);
+                pictureBox1.Image = Image.FromStream(ms);
+
+            }
+
+        
+            else
+            {
+                MessageBox.Show("ID not found");
+            }
+
+    con.Close();*/
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cid.Text = "";
+            cnm.Text = "";
+            ccat.Text = "";
+            ccol.Text = "";
+            cdp.Text = "";
+            cmil.Text = "";
+            cno.Text = "";
+            chp.Text = "";
+            cbn.Text = "";
+            this.cmdd.Text = "";
+            cino.Text = "";
+            cr.Text = ""; 
         }
     }
 }

@@ -24,6 +24,9 @@ namespace project1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            carmgt c = new carmgt();
+            this.Close();
+            c.Show();
             /*string cmd = "Select * from car";
             SqlDataAdapter dp = new SqlDataAdapter(cmd, con);
             //  SqlCommandBuilder cb = new SqlCommandBuilder(dp);
@@ -43,7 +46,7 @@ namespace project1
         {
             try
             {
-                string qry = "select * from car";
+                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from car";
                 SqlCommand cmd = new SqlCommand(qry, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
