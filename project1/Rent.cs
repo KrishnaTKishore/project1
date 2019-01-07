@@ -24,7 +24,7 @@ namespace project1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             LogIn r = new LogIn();
             r.Show();
         }
@@ -66,7 +66,7 @@ namespace project1
         {
             try
             {
-                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from car where rented = 'no'";
+                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from cars where rented = 'no'";
                 SqlCommand cmd = new SqlCommand(qry, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -112,7 +112,7 @@ namespace project1
             con.Open();
             SqlCommand cmd1 = con.CreateCommand();
             cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "UPDATE car SET rented ='yes' WHERE ID='" + tbcarchosen.Text + "'";
+            cmd1.CommandText = "UPDATE cars SET rented ='yes' WHERE ID='" + tbcarchosen.Text + "'";
             cmd1.ExecuteNonQuery();
             
             con.Close(); 
@@ -120,7 +120,7 @@ namespace project1
             MessageBox.Show("Booking Successful!!");
             try
             {
-                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from car where rented = 'no'";
+                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from cars where rented = 'no'";
                 SqlCommand cmd11 = new SqlCommand(qry, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd11);
                 DataTable dt = new DataTable();
@@ -157,7 +157,7 @@ namespace project1
         private void tbcarchosen_TextChanged(object sender, EventArgs e)
         {
             con.Open();
-            string cmd = "Select daily_price from car";
+            string cmd = "Select daily_price from cars where Id='"+tbcarchosen.Text+ "'";
             try
             {
                 SqlCommand se = new SqlCommand(cmd, con);

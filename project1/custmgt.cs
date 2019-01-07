@@ -38,6 +38,7 @@ namespace project1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Close();
             user f3 = new user();
             f3.Show();
         }

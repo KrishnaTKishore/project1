@@ -58,7 +58,7 @@ namespace project1
             iExit = MessageBox.Show("Confirm if you want to exit", "car sales", MessageBoxButtons.YesNo);
             if (iExit == DialogResult.Yes)
             {
-                this.Hide();
+                this.Close();
                 LogIn l = new LogIn();
                 l.Show();
 

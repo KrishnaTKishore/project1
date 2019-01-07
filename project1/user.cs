@@ -39,5 +39,12 @@ namespace project1
             
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LogIn dm = new LogIn();
+            dm.Show();
+        }
     }
 }

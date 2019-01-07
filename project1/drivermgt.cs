@@ -71,7 +71,7 @@ namespace project1
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "UPDATE drivers SET name='" + name.Text + "' WHERE ID='" + ID.Text + "'";
+            cmd.CommandText = "UPDATE drivers SET salary='" + salary.Text + "' WHERE ID='" + ID.Text + "'";
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Updated");

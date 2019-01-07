@@ -46,7 +46,7 @@ namespace project1
         {
             try
             {
-                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from car";
+                string qry = "select id,car_name,car_category,colour,daily_price,mileage,car_no,horse_power,brand_name,mfd_date,insurance_no,rented from cars";
                 SqlCommand cmd = new SqlCommand(qry, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

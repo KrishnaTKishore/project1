@@ -31,7 +31,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,26 +49,21 @@
             this.chp = new System.Windows.Forms.TextBox();
             this.cbn = new System.Windows.Forms.TextBox();
             this.cino = new System.Windows.Forms.TextBox();
-            this.iloc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.cr = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmdd = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.cid = new System.Windows.Forms.TextBox();
             this.genid = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button7 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 404);
+            this.button1.Location = new System.Drawing.Point(44, 404);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -96,16 +90,6 @@
             this.button4.Text = "display database";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(713, 204);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "select";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -253,13 +237,6 @@
             this.cino.TabIndex = 27;
             this.cino.TextChanged += new System.EventHandler(this.cino_TextChanged);
             // 
-            // iloc
-            // 
-            this.iloc.Location = new System.Drawing.Point(528, 206);
-            this.iloc.Name = "iloc";
-            this.iloc.Size = new System.Drawing.Size(173, 20);
-            this.iloc.TabIndex = 28;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -268,24 +245,6 @@
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "colour";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(543, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "model";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(447, 213);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 13);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "image location";
             // 
             // cr
             // 
@@ -336,11 +295,6 @@
             this.genid.UseVisualStyleBackColor = true;
             this.genid.Click += new System.EventHandler(this.genid_Click);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(626, 404);
@@ -350,14 +304,6 @@
             this.button7.Text = "back";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(528, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 169);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
@@ -369,11 +315,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(147, 404);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 40;
+            this.button6.Text = "update";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // carmgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.genid);
             this.Controls.Add(this.cid);
@@ -381,10 +338,6 @@
             this.Controls.Add(this.cmdd);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cr);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.iloc);
             this.Controls.Add(this.cino);
             this.Controls.Add(this.cbn);
             this.Controls.Add(this.chp);
@@ -405,14 +358,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Name = "carmgt";
             this.Text = "carmgt";
             this.Load += new System.EventHandler(this.carmgt_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,7 +374,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -442,19 +392,15 @@
         private System.Windows.Forms.TextBox chp;
         private System.Windows.Forms.TextBox cbn;
         private System.Windows.Forms.TextBox cino;
-        private System.Windows.Forms.TextBox iloc;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox cr;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker cmdd;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox cid;
         private System.Windows.Forms.Button genid;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button6;
     }
 }
